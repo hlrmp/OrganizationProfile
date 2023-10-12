@@ -77,13 +77,13 @@ namespace OrganizationProfile
             {
                 _ContactNo = long.Parse(Contact);
             }
-            else if (Regex.IsMatch(Contact,@"^[0]"))
-            {
-                throw new ArgumentNullException();
-            }
+            //else if (Regex.IsMatch(Contact,@"^[0]"))
+            //{
+            //    throw new ArgumentNullException();
+            //}
             else
             {
-                throw new FormatException();
+                throw new ArgumentNullException();
             }
             return _ContactNo;
         }
@@ -96,7 +96,7 @@ namespace OrganizationProfile
             }
             else
             {
-                throw new FormatException();
+             throw new ArgumentNullException();
             }
 
             return _FullName;
@@ -110,7 +110,7 @@ namespace OrganizationProfile
             }
              else
             {
-                throw new FormatException();
+                throw new ArgumentNullException();
             }
 
             return _Age;
