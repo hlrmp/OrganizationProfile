@@ -18,7 +18,7 @@ namespace OrganizationProfile
         private long _ContactNo;
         private long _StudentNo;
 
-        StudentInformationClass studentInformationClass = new StudentInformationClass();
+
         public frmRegistration()
         {
             InitializeComponent();
@@ -44,12 +44,27 @@ namespace OrganizationProfile
                 cbPrograms.Items.Add(ListOfProgram[i].ToString());
             }
 
+
+            string[] genders = new string[]
+          {
+            "Female",
+            "Male"
+
+          };
+
+            for (int i = 0; i < 2; i++)
+            {
+                cbGender.Items.Add(genders[i].ToString());
+            }
+
         }
 
-        /////return methods 
+
+
+    
         public long StudentNumber(string studNum)
         {
-
+           
             _StudentNo = long.Parse(studNum);
 
             return _StudentNo;
@@ -57,11 +72,19 @@ namespace OrganizationProfile
 
         public long ContactNo(string Contact)
         {
+
             if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
             {
                 _ContactNo = long.Parse(Contact);
             }
-
+            else if (Regex.IsMatch(Contact,@"^[0]"))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                throw new FormatException();
+            }
             return _ContactNo;
         }
 
@@ -70,6 +93,10 @@ namespace OrganizationProfile
             if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
             {
                 _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+            }
+            else
+            {
+                throw new FormatException();
             }
 
             return _FullName;
@@ -81,23 +108,55 @@ namespace OrganizationProfile
             {
                 _Age = Int32.Parse(age);
             }
+             else
+            {
+                throw new FormatException();
+            }
 
             return _Age;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            studentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            studentInformationClass.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
-            studentInformationClass.SetProgram = cbPrograms.Text;
-            studentInformationClass.SetGender = cbGender.Text;
-            studentInformationClass.SetContactNo = (int)ContactNo(txtContactNo.Text);
-            studentInformationClass.SetAge = Age(txtAge.Text);
-            studentInformationClass.SetBirthday = datePickerBirtday.Value.ToString("yyyyMM-dd");
-            frmConfirmation frm = new frmConfirmation();
-            frm.Show();
 
-           
+            try
+            {
+                StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+                StudentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
+                StudentInformationClass.SetProgram = cbPrograms.Text;
+                StudentInformationClass.SetGender = cbGender.Text;
+                StudentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
+                StudentInformationClass.SetAge = Age(txtAge.Text);
+                StudentInformationClass.SetBirthday = datePickerBirtday.Value.ToString("yyyy-MM-dd");
+
+                frmConfirmation frm = new frmConfirmation();
+                frm.Show();
+
+                if (string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(txtContactNo.Text) || string.IsNullOrEmpty(txtFirstName.Text)
+                    || string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtMiddleInitial.Text) || string.IsNullOrEmpty(txtStudentNo.Text))
+                {
+                    throw new ArgumentNullException();
+                }
+
+            }
+            catch (FormatException e1)
+            {
+                MessageBox.Show("Invalid Format - " + e1.Message);
+            }
+            catch (ArgumentNullException e2)
+            {
+                MessageBox.Show("ArgumentNullException - " + e2.Message);
+            }
+            catch (OverflowException e3)
+            {
+                MessageBox.Show("OverFlowException - " + e3.Message);
+            }
+            catch (IndexOutOfRangeException e4)
+            {
+                MessageBox.Show("IndexOutOfRangeException - " + e4.Message);
+            }
+            
+
         }
     }
 }

@@ -144,7 +144,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(393, 276);
+            label10.Location = new Point(528, 274);
             label10.Name = "label10";
             label10.Size = new Size(87, 18);
             label10.TabIndex = 9;
@@ -154,9 +154,9 @@
             // 
             btnRegister.BackColor = Color.Tomato;
             btnRegister.ForeColor = SystemColors.ControlText;
-            btnRegister.Location = new Point(311, 357);
+            btnRegister.Location = new Point(610, 345);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(135, 44);
+            btnRegister.Size = new Size(150, 60);
             btnRegister.TabIndex = 10;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
@@ -166,42 +166,42 @@
             // 
             txtStudentNo.Location = new Point(169, 150);
             txtStudentNo.Name = "txtStudentNo";
-            txtStudentNo.Size = new Size(100, 23);
+            txtStudentNo.Size = new Size(196, 22);
             txtStudentNo.TabIndex = 11;
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(174, 195);
+            txtLastName.Location = new Point(169, 195);
             txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(100, 23);
+            txtLastName.Size = new Size(196, 22);
             txtLastName.TabIndex = 12;
             // 
             // txtFirstName
             // 
             txtFirstName.Location = new Point(499, 192);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(100, 23);
+            txtFirstName.Size = new Size(193, 22);
             txtFirstName.TabIndex = 13;
             // 
             // txtMiddleInitial
             // 
-            txtMiddleInitial.Location = new Point(764, 188);
+            txtMiddleInitial.Location = new Point(753, 195);
             txtMiddleInitial.Name = "txtMiddleInitial";
-            txtMiddleInitial.Size = new Size(100, 23);
+            txtMiddleInitial.Size = new Size(71, 22);
             txtMiddleInitial.TabIndex = 14;
             // 
             // txtAge
             // 
-            txtAge.Location = new Point(175, 237);
+            txtAge.Location = new Point(169, 239);
             txtAge.Name = "txtAge";
-            txtAge.Size = new Size(100, 23);
+            txtAge.Size = new Size(196, 22);
             txtAge.TabIndex = 15;
             // 
             // txtContactNo
             // 
-            txtContactNo.Location = new Point(499, 275);
+            txtContactNo.Location = new Point(631, 272);
             txtContactNo.Name = "txtContactNo";
-            txtContactNo.Size = new Size(100, 23);
+            txtContactNo.Size = new Size(193, 22);
             txtContactNo.TabIndex = 16;
             // 
             // cbPrograms
@@ -209,7 +209,7 @@
             cbPrograms.FormattingEnabled = true;
             cbPrograms.Location = new Point(499, 145);
             cbPrograms.Name = "cbPrograms";
-            cbPrograms.Size = new Size(121, 23);
+            cbPrograms.Size = new Size(325, 24);
             cbPrograms.TabIndex = 17;
             // 
             // cbGender
@@ -217,23 +217,23 @@
             cbGender.FormattingEnabled = true;
             cbGender.Location = new Point(499, 237);
             cbGender.Name = "cbGender";
-            cbGender.Size = new Size(121, 23);
+            cbGender.Size = new Size(193, 24);
             cbGender.TabIndex = 18;
             // 
             // datePickerBirtday
             // 
             datePickerBirtday.Location = new Point(160, 277);
             datePickerBirtday.Name = "datePickerBirtday";
-            datePickerBirtday.Size = new Size(200, 23);
+            datePickerBirtday.Size = new Size(288, 22);
             datePickerBirtday.TabIndex = 19;
             // 
             // frmRegistration
             // 
-            AutoScaleDimensions = new SizeF(8F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PapayaWhip;
+            BackColor = Color.PeachPuff;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(914, 473);
+            ClientSize = new Size(914, 430);
             Controls.Add(datePickerBirtday);
             Controls.Add(cbGender);
             Controls.Add(cbPrograms);
@@ -254,7 +254,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Font = new Font("Caladea", 9.749999F, FontStyle.Bold, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmRegistration";
             Text = "OrganizationProfile";
