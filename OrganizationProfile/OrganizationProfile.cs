@@ -64,39 +64,65 @@ namespace OrganizationProfile
     
         public long StudentNumber(string studNum)
         {
-           
-            _StudentNo = long.Parse(studNum);
 
+            if (Regex.IsMatch(studNum, @"^[0-9]{1,11}$"))
+            {
+                _StudentNo = long.Parse(studNum);
+            }
+            else if (Regex.IsMatch(studNum, @"^[a-zA-Z]+$"))
+            {
+                throw new FormatException("put student number correctly");
+            }
+            else
+            {
+                throw new ArgumentNullException("1");
+            }
             return _StudentNo;
         }
 
         public long ContactNo(string Contact)
         {
 
-            if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
+            if (Regex.IsMatch(Contact, @"^0[0-9]{10,11}$"))
             {
                 _ContactNo = long.Parse(Contact);
             }
-            //else if (Regex.IsMatch(Contact,@"^[0]"))
-            //{
-            //    throw new ArgumentNullException();
-            //}
+            else if (Regex.IsMatch(Contact, @"^[a-zA-Z]+$"))
+            {
+                throw new FormatException("put contact number correctly");
+            }
+            else if (Regex.IsMatch(Contact, @"^[0-9]{1,10}$"))
+            {
+                throw new IndexOutOfRangeException("put contact number correctly");
+            }
+            else if (Regex.IsMatch(Contact, @"^[0-9]{12,20}$"))
+            {
+                throw new OverflowException("put contact number correctly");
+            }
+
             else
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("2");
             }
-            return _ContactNo;
+            return _ContactNo; ;
         }
 
         public string FullName(string LastName, string FirstName, string MiddleInitial)
         {
-            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") & Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") & Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
             {
-                _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+                LastName = Char.ToUpper(LastName[0]) + LastName.Substring(1);
+
+                _FullName =  LastName + ", " + FirstName + " " + MiddleInitial;
+                
+            }
+            else if (Regex.IsMatch(LastName, @"^[0-9]{1,20}$") || Regex.IsMatch(MiddleInitial, @"^[0-9]{1,20}$") || Regex.IsMatch(FirstName, @"^[0-9]{1,20}$"))
+            {
+                throw new FormatException("please enter name corectly");
             }
             else
             {
-             throw new ArgumentNullException();
+                throw new ArgumentNullException ("please enter your name");
             }
 
             return _FullName;
@@ -108,9 +134,19 @@ namespace OrganizationProfile
             {
                 _Age = Int32.Parse(age);
             }
-             else
+            else if (Regex.IsMatch(age, @"^[0-9]{4,15}$"))
             {
-                throw new ArgumentNullException();
+                throw new OverflowException("put age correctly");
+
+            }
+
+            else if (Regex.IsMatch(age, @"^[a-zA-Z]+$"))
+            {
+                throw new FormatException("put age correctly");
+            }
+            else
+            {
+                throw new ArgumentNullException("3");
             }
 
             return _Age;
@@ -132,11 +168,11 @@ namespace OrganizationProfile
                 frmConfirmation frm = new frmConfirmation();
                 frm.Show();
 
-                if (string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(txtContactNo.Text) || string.IsNullOrEmpty(txtFirstName.Text)
-                    || string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtMiddleInitial.Text) || string.IsNullOrEmpty(txtStudentNo.Text))
-                {
-                    throw new ArgumentNullException();
-                }
+                //if (string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(txtContactNo.Text) || string.IsNullOrEmpty(txtFirstName.Text)
+                //    || string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtMiddleInitial.Text) || string.IsNullOrEmpty(txtStudentNo.Text))
+                //{
+                //    throw new ArgumentNullException();
+                //}
 
             }
             catch (FormatException e1)
