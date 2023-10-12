@@ -112,6 +112,8 @@ namespace OrganizationProfile
             if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") & Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") & Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
             {
                 LastName = Char.ToUpper(LastName[0]) + LastName.Substring(1);
+                FirstName = Char.ToUpper(FirstName[0]) + FirstName.Substring(1);
+                MiddleInitial = Char.ToUpper(MiddleInitial[0]) + MiddleInitial.Substring(1);
 
                 _FullName =  LastName + ", " + FirstName + " " + MiddleInitial;
                 
