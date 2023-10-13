@@ -23,10 +23,7 @@ namespace OrganizationProfile
             StudentInformationClass.SetFullName = FullName(txtLastName.Text,txtFirstName.Text, txtMiddleInitial.Text);
             StudentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
             StudentInformationClass.SetProgram = cbPrograms.Text;
-            IT1811
-03 Laboratory Exercise 1 * Property of STI
-Page 4 of 4
-StudentInformationClass.SetGender = cbGender.Text;
+            StudentInformationClass.SetGender = cbGender.Text;
             StudentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
             StudentInformationClass.SetAge = Age(txtAge.Text);
             StudentInformationClass.SetBirthDay = datePickerBirthday.Value.ToString("yyyyMM-dd");
