@@ -17,6 +17,8 @@ namespace OrganizationProfile
         private int _Age;
         private long _ContactNo;
         private long _StudentNo;
+
+        StudentInformationClass studentInformationClass = new StudentInformationClass();
         public frmRegistration()
         {
             InitializeComponent();
@@ -85,7 +87,17 @@ namespace OrganizationProfile
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            studentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+            studentInformationClass.SetStudentNo = (int)StudentNumber(txtStudentNo.Text);
+            studentInformationClass.SetProgram = cbPrograms.Text;
+            studentInformationClass.SetGender = cbGender.Text;
+            studentInformationClass.SetContactNo = (int)ContactNo(txtContactNo.Text);
+            studentInformationClass.SetAge = Age(txtAge.Text);
+            studentInformationClass.SetBirthday = datePickerBirtday.Value.ToString("yyyyMM-dd");
+            frmConfirmation frm = new frmConfirmation();
+            frm.Show();
 
+           
         }
     }
 }

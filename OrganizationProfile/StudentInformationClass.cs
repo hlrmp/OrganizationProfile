@@ -17,5 +17,6 @@ namespace OrganizationProfile
         public string SetBirthday = " ";
         public string SetFullName = " ";
 
+        public int SetAge = 0;  
     }
 }
