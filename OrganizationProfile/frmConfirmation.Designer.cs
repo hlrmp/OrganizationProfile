@@ -125,6 +125,7 @@
             btnSubmit.TabIndex = 46;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // lblStudentNo
             // 
@@ -212,6 +213,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmConfirmation";
             Text = "g";
+            Load += frmConfirmation_Load;
             ResumeLayout(false);
             PerformLayout();
         }

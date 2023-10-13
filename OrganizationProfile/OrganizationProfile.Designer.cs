@@ -160,6 +160,7 @@
             btnRegister.TabIndex = 10;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // txtStudentNo
             // 
@@ -257,6 +258,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmRegistration";
             Text = "OrganizationProfile";
+            Load += frmRegistration_Load;
             ResumeLayout(false);
             PerformLayout();
         }
