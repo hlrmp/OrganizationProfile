@@ -13,8 +13,8 @@ namespace OrganizationProfile
 {
     public partial class frmConfirmation : Form
     {
-        StudentInformationClass studentInformationClass = new StudentInformationClass();
-        frmRegistration frmRegistration = new frmRegistration();
+        
+
         public frmConfirmation()
         {
             InitializeComponent();

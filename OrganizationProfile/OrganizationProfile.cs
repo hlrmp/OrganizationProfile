@@ -170,11 +170,7 @@ namespace OrganizationProfile
                 frmConfirmation frm = new frmConfirmation();
                 frm.Show();
 
-                //if (string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(txtContactNo.Text) || string.IsNullOrEmpty(txtFirstName.Text)
-                //    || string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtMiddleInitial.Text) || string.IsNullOrEmpty(txtStudentNo.Text))
-                //{
-                //    throw new ArgumentNullException();
-                //}
+             
 
             }
             catch (FormatException e1)
