@@ -61,7 +61,7 @@ namespace OrganizationProfile
 
 
 
-    
+
         public long StudentNumber(string studNum)
         {
 
@@ -115,8 +115,8 @@ namespace OrganizationProfile
                 FirstName = Char.ToUpper(FirstName[0]) + FirstName.Substring(1);
                 MiddleInitial = Char.ToUpper(MiddleInitial[0]) + MiddleInitial.Substring(1);
 
-                _FullName =  LastName + ", " + FirstName + " " + MiddleInitial;
-                
+                _FullName = LastName + ", " + FirstName + " " + MiddleInitial;
+
             }
             else if (Regex.IsMatch(LastName, @"^[0-9]{1,20}$") || Regex.IsMatch(MiddleInitial, @"^[0-9]{1,20}$") || Regex.IsMatch(FirstName, @"^[0-9]{1,20}$"))
             {
@@ -124,7 +124,7 @@ namespace OrganizationProfile
             }
             else
             {
-                throw new ArgumentNullException ("please enter your name");
+                throw new ArgumentNullException("please enter your name");
             }
 
             return _FullName;
@@ -193,7 +193,7 @@ namespace OrganizationProfile
             {
                 MessageBox.Show("IndexOutOfRangeException - " + e4.Message);
             }
-            
+
 
         }
     }

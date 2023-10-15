@@ -22,7 +22,30 @@ namespace OrganizationProfile
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            frmRegistration frm = new frmRegistration();
 
+            DialogResult dialog = (MessageBox.Show(" do you want to submit , " + " \n " + " double check your information  ", "SUBMIT", MessageBoxButtons.OKCancel));
+            if (dialog == DialogResult.OK)
+            {
+
+                frm.txtFirstName.ResetText();
+                frm.txtLastName.Clear();
+                frm.txtMiddleInitial.Clear();
+                frm.txtStudentNo.Clear();
+                frm.txtContactNo.Clear();
+                frm.txtAge.Clear();
+                frm.cbGender.ResetText();
+                frm.cbPrograms.ResetText();
+                frm.datePickerBirtday.ResetText();
+
+           
+                this.Hide();
+
+            }
+            else
+            {
+
+            }
         }
 
         private void frmConfirmation_Load(object sender, EventArgs e)

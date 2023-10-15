@@ -276,14 +276,14 @@
         private Label label9;
         private Label label10;
         private Button btnRegister;
-        private TextBox txtStudentNo;
-        private TextBox txtLastName;
-        private TextBox txtFirstName;
-        private TextBox txtMiddleInitial;
-        private TextBox txtAge;
-        private TextBox txtContactNo;
-        private ComboBox cbPrograms;
-        private ComboBox cbGender;
-        private DateTimePicker datePickerBirtday;
+        public TextBox txtStudentNo;
+        public TextBox txtLastName;
+        public TextBox txtFirstName;
+        public TextBox txtMiddleInitial;
+        public TextBox txtAge;
+        public TextBox txtContactNo;
+        public ComboBox cbPrograms;
+        public ComboBox cbGender;
+        public DateTimePicker datePickerBirtday;
     }
 }
